@@ -1,0 +1,259 @@
+# Originally created in 2021 from the template at
+# <https://www.toptal.com/developers/gitignore/api/python,notepadpp,vim,emacs,zsh,tortoisegit,windows,linux,macos,ssh,git>
+# Modified in 2021 by asrelo
+#
+# The original templates and the generator are both licensed under the terms of the MIT License;
+# see <https://github.com/toptal/gitignore.io/blob/master/LICENSE.md> for the generator's license
+# and <https://github.com/toptal/gitignore/blob/master/LICENSE.md> for the templates' license.
+
+### Project-specific ###
+# Personal notes
+personal_notes/
+# Environmental variables
+.env
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+# C extensions
+*.so
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+# PyInstaller
+#   Usually these files are written by a python script from a template before
+#   PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+# Unit test / coverage reports [removed]
+# Translations
+*.mo
+*.pot
+# Django stuff [removed]
+# Flask stuff [removed]
+# Scrapy stuff
+.scrapy
+# Sphinx documentation
+docs/_build/
+# PyBuilder [removed]
+# Jupyter Notebook [removed]
+# IPython
+profile_default/
+ipython_config.py
+# pyenv
+#   For a library or package, you might want to ignore these files since the
+#   code is intended to run in multiple environments; otherwise, check them
+#   in
+# .python-version
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock
+#   in version control. However, in case of collaboration, if having
+#   platform-specific dependencies or dependencies having no cross-platform
+#   support, pipenv may install dependencies that don't work, or not install
+#   all needed dependencies.
+#Pipfile.lock
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+# Celery stuff [removed]
+# SageMath parsed files [removed]
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+# Spyder project settings [removed]
+# Rope project settings
+.ropeproject
+# mkdocs documentation
+/site
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+# Pyre type checker
+.pyre/
+# pytype static type analyzer
+.pytype/
+# Cython debug symbols
+cython_debug/
+
+### NotepadPP ###
+# Notepad++ backups #
+*.bak
+
+### Git ###
+# Created by git for backups. To disable backups in Git:
+# $ git config --global mergetool.keepBackup false
+*.orig
+# Created by git when using merge tools for conflicts
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt
+# Other
+*.patch
+*.diff
+*.rej
+interdiff*.txt
+
+### Emacs ###
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+# Org-mode [removed]
+# flymake-mode
+*_flymake.*
+# eshell files
+/eshell/history
+/eshell/lastdir
+# elpa packages
+/elpa/
+# reftex files [removed]
+# AUCTeX auto folder [removed]
+# cask packages [removed]
+# Flycheck
+flycheck_*.el
+# server auth directory
+/server/
+# projectiles files
+.projectile
+# directory configuration
+.dir-locals.el
+# network security
+/network-security.data
+
+### Vim ###
+# Swap
+[._]*.s[a-v][a-z]
+!*.svg  # comment out if you don't need vector files
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+# Session
+Session.vim
+Sessionx.vim
+# Temporary
+.netrwhist
+# Auto-generated tag files
+tags
+# Persistent undo
+[._]*.un~
+
+### Zsh ###
+# Zsh compiled script + zrecompile backup
+*.zwc
+*.zwc.old
+# Zsh completion-optimization dumpfile
+*zcompdump*
+# Zsh zcalc history
+.zcalc_history
+# A popular plugin manager's files
+._zinit
+.zinit_lstupd
+# zdharma/zshelldoc tool's files
+zsdoc/data
+# robbyrussell/oh-my-zsh/plugins/per-directory-history plugin's files
+# (when set-up to store the history in the local directory)
+.directory_history
+# MichaelAquilina/zsh-autoswitch-virtualenv plugin's files
+# (for Zsh plugins using Python)
+# Zunit tests' output
+/tests/_output/*
+!/tests/_output/.gitkeep
+
+### Linux ###
+# temporary files which can be created if a process still has a handle open
+# of a deleted file
+.fuse_hidden*
+# KDE directory preferences
+.directory
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+# .nfs files are created when an open file is removed but is still being
+# accessed
+.nfs*
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+# Dump file
+*.stackdump
+# Folder config file
+[Dd]esktop.ini
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+# Windows Installer files [removed]
+# Windows shortcuts
+*.lnk
+
+### SSH ###
+**/.ssh/id_*
+**/.ssh/*_id_*
+**/.ssh/known_hosts
+
+### TortoiseGit ###
+# Project-level settings
+/.tgitconfig

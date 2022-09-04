@@ -1,0 +1,474 @@
+# `pylint --version` output:
+#     pylint 2.8.1
+#     astroid 2.5.6
+#     Python 3.8.9 (tags/v3.8.9:a743f81, Apr  6 2021, 14:02:34) [MSC v.1928 64 bit (AMD64)]
+
+[MASTER]
+
+# Files or directories to be skipped. They should be base names, not paths.
+ignore=third_party
+ignore-patterns=
+
+# Plugins to load, usually to register additional checkers (a comma-separated list of Python
+# module names).
+load-plugins=
+
+# Packages and modules from where C extensions may be loaded (a comma-separated list of names).
+# Extensions are loading into the active Python interpreter and may run arbitrary code.
+extension-pkg-allow-list=
+
+# Allow loading of arbitrary C extensions. Extensions are imported into the active Python
+# interpreter and may run arbitrary code.
+unsafe-load-any-extension=no
+
+# A score threshold to be exceeded before program exits with error.
+fail-under=10.0
+
+# Python code to execute, usually for `sys.path` manipulation such as `pygtk.require()`.
+#init-hook=
+
+# Use multiple processes to speed up Pylint. Specifying `0` will auto-detect the number of
+# processors available to use.
+jobs=0
+
+# The amount of potential inferred values when inferring a single object. This can help the
+# performance when dealing with large functions or complex, nested conditions.
+limit-inference-results=100
+
+# Pickle collected data for later comparisons.
+persistent=no
+
+# Attempt to guess common misconfiguration and emit user-friendly hints instead of false-positive
+# error messages.
+suggestion-mode=yes
+
+
+[MESSAGES CONTROL]
+
+# Only show warnings with the listed confidence levels. Leave empty to show all. Valid levels:
+# `HIGH`, `INFERENCE`, `INFERENCE_FAILURE`, `UNDEFINED`.
+confidence=
+
+# Disable the message, report, category or checker with the given id(s). You can either give
+# multiple identifiers separated by comma (`,`) or put this option multiple times (only on the
+# command line, not in the configuration file where it should appear only once). You can also use
+# `--disable=all` to disable everything first and then reenable specific checks. For example, if
+# you want to run only the similarities checker, you can use `--disable=all
+# --enable=similarities`. If you want to run only the classes checker, but have no *Warning*
+# level messages displayed, use `--disable=all --enable=classes --disable=W`.
+disable=file-ignored,
+        locally-disabled,
+        suppressed-message,
+        superfluous-parens,
+        dict-items-not-iterating,
+        dict-keys-not-iterating,
+        dict-values-not-iterating,
+        filter-builtin-not-iterating,
+        map-builtin-not-iterating,
+        range-builtin-not-iterating,
+        zip-builtin-not-iterating,
+        useless-return,
+        import-error,
+        missing-class-docstring,
+        missing-function-docstring,
+        unsubscriptable-object,
+        consider-using-f-string
+
+# Enable the message, report, category or checker with the given id(s). See the `disable` notes
+# for details.
+enable=c-extension-no-member
+
+
+[REPORTS]
+
+# Activate the evaluation score.
+score=yes
+
+# Python expression which should return a score less than or equal to 10. You have access to the
+# variables `error`, `warning`, `refactor`, and `convention` which contain the number of messages
+# in each category, as well as `statement` which is the total number of statements analyzed. This
+# score is used by the global evaluation report (RP0004).
+evaluation=10.0 - ((float(5 * error + warning + refactor + convention) / statement) * 10)
+
+# Display a full report or only the messages.
+reports=no
+
+# Set the output format. Available formats are `text`, `parseable`, `colorized`, `json` and
+# `msvs` (visual studio). You can also give a reporter class, e.g.
+# `mypackage.mymodule.MyReporterClass`.
+output-format=text
+
+# Template used to display messages. This is a python new-style format string used to format the
+# message information. See doc for all details.
+#msg-template=
+
+
+[REFACTORING]
+
+# Maximum number of nested blocks for function/method body
+max-nested-blocks=5
+
+# Complete name of functions that never returns. When checking for
+# `inconsistent-return-statements` if a never returning function is called then it will be
+# considered as an explicit return statement and no message will be printed.
+never-returning-functions=sys.exit,
+                          argparse.parse_error
+
+
+[BASIC]
+
+# The following are naming styles. For each, a regex, if present, overrides the corresponding
+# `*-naming-style option`.
+
+module-naming-style=snake_case
+#module-rgx=
+
+variable-naming-style=snake_case
+#variable-rgx=
+
+const-naming-style=UPPER_CASE
+#const-rgx=
+
+function-naming-style=snake_case
+#function-rgx=
+
+argument-naming-style=snake_case
+#argument-rgx=
+
+attr-naming-style=snake_case
+#attr-rgx=
+
+inlinevar-naming-style=any
+#inlinevar-rgx=
+
+class-naming-style=PascalCase
+#class-rgx=
+
+method-naming-style=snake_case
+#method-rgx=
+
+class-attribute-naming-style=any
+#class-attribute-rgx=
+
+class-const-naming-style=UPPER_CASE
+#class-const-rgx=
+
+# Good/bad variable names which should always be accepted/refused, separated by a comma.
+# If a name matches any regex, it will always be accepted/refused
+good-names=_,err,ex,i,j,k,t,v,Run,run,main,__init__
+good-names-rgxs=
+bad-names=
+bad-names-rgxs=
+
+# Include a hint for the correct naming format with `invalid-name`.
+include-naming-hint=yes
+
+# Colon-delimited sets of names that determine each other's naming style when the name regexes
+# allow several styles.
+name-group=
+
+# Minimum line length for functions/classes that require docstrings, shorter ones are exempt.
+docstring-min-length=4
+
+# Regular expression which should only match function or class names that do not require a
+# docstring.
+no-docstring-rgx=^_
+
+# Decorators that produce properties (a list), such as `abc.abstractproperty`. These decorators
+# are taken in consideration only for `invalid-name`.
+property-classes=abc.abstractproperty,
+                 cached_property.cached_property,
+                 cached_property.threaded_cached_property,
+                 cached_property.cached_property_with_ttl,
+                 cached_property.threaded_cached_property_with_ttl
+
+
+[FORMAT]
+
+# Maximum number of characters on a single line.
+max-line-length=100
+
+# Number of spaces of indent required inside a hanging or continued line.
+indent-after-paren=4
+
+# Indentation unit string. This is usually `'    '` (4 spaces) or `'\t'` (1 tab).
+indent-string='    '
+
+# Expected format of line ending, e.g. empty (any line ending), `LF` or `CRLF`.
+expected-line-ending-format=
+
+# Regexp for a line that is allowed to be longer than the limit.
+ignore-long-lines=(?x)(((http(s)?)|(git)://\S+)|(^\s*(\#.*)?((from\s+\S+\s+)?import\s+.+)(\s*\#.*)?)|(\#\s*(pylint:\s*)|(noqa)|(noseq)|(fmt:\s*)|(isort:\s*)|(mypy:\s*)))
+
+# Maximum number of lines in a module.
+max-module-lines=1000
+
+# Allow the body of a class to be on the same line as the declaration if body contains single
+# statement.
+single-line-class-stmt=no
+
+# Allow the body of an `if` to be on the same line as the test if there is no `else`.
+single-line-if-stmt=yes
+
+
+[LOGGING]
+
+# The type of string formatting that logging methods do. `old` means using `%` formatting, `new`
+# is for `{}` formatting.
+logging-format-style=new
+
+# Logging modules to check that the string format arguments are in logging function parameter
+# format.
+logging-modules=logging,
+                absl.logging,
+                tensorflow.io.logging
+
+
+[MISCELLANEOUS]
+
+# List of note tags to take in consideration, separated by a comma (or a single regex).
+notes=FIXME,XXX,TODO
+#notes-rgx=
+
+
+[SIMILARITIES]
+
+# Minimum lines number of a similarity.
+min-similarity-lines=4
+
+# Ignore comments, docstrings, imports respectively when computing similarities.
+ignore-comments=yes
+ignore-docstrings=yes
+ignore-imports=yes
+
+
+[SPELLING]
+
+# Limited count of emitted suggestions for spelling mistakes.
+max-spelling-suggestions=4
+
+# Spelling dictionary name. Available dictionaries: none. To make it work, install the
+# `python-enchant` package.
+spelling-dict=
+
+# Words that should be considered directives if they appear at the beginning of a comment and
+# should not be checked (a comma-separated list).
+spelling-ignore-comment-directives=fmt: on,fmt: off,noqa:,noqa,nosec,isort:skip,mypy:
+
+# Words that should not be checked (a comma-separated list).
+spelling-ignore-words=
+
+# File that contains the private dictionary (a path); one word per line.
+spelling-private-dict-file=
+
+# Store unknown words to the private dictionary (see the `--spelling-private-dict-file` option)
+# instead of raising a message.
+spelling-store-unknown-words=no
+
+
+[STRING]
+
+# The `inconsistent-quotes` generates a warning when the character used as a quote delimiter is
+# used inconsistently within a module.
+check-quote-consistency=no
+
+# The `implicit-str-concat` generates a warning on implicit string concatenation in sequences
+# defined over several lines.
+check-str-concat-over-line-jumps=no
+
+
+[TYPECHECK]
+
+# Decorators that produce context managers (a list), such as `contextlib.contextmanager`.
+contextmanager-decorators=contextlib.contextmanager
+
+# Members which are set dynamically and missed by the Pylint inference system, and so
+# should not trigger the E1101 when accessed (a list). Python regular expressions are accepted.
+generated-members=
+
+# Warn about missing members when the owner of the attribute is inferred to be `None`.
+ignore-none=yes
+
+# Missing members accessed in mixin class should be ignored. A mixin class is detected if its
+# name ends with `mixin` (case insensitive).
+ignore-mixin-members=yes
+
+# Whether Pylint should warn about a `no-member` and similar checks whenever an opaque object is
+# returned when inferring, or not. The inference can return multiple potential results while
+# evaluating a Python object, but some branches might not be evaluated, which results in partial
+# inference. In that case, it might be useful to still emit a `no-member` and other checks for
+# the rest of the inferred objects.
+ignore-on-opaque-inference=yes
+
+# Classes for which member attributes should not be checked (useful for classes with dynamically
+# set attributes) (a list of (qualified) names).
+ignored-classes=optparse.Values,
+                thread._local,
+                _thread._local
+
+# Modules for which member attributes should not be checked (useful for modules/projects where
+# namespaces are manipulated during runtime and thus existing member attributes cannot be deduced
+# by static analysis) (a list of (qualified) names). This also supports Unix pattern matching.
+ignored-modules=
+
+# Show a hint with possible names when a member name was not found. The aspect of finding the
+# hint is based on edit distance.
+missing-member-hint=yes
+
+# The minimum edit distance a name should have in order to be considered a similar match for a
+# missing member name.
+missing-member-hint-distance=1
+
+# The total number of similar names that should be taken in consideration when showing a hint for
+# a missing member.
+missing-member-max-choices=1
+
+# Decorators that change the signature of a decorated function (a list).
+signature-mutators=
+
+
+[VARIABLES]
+
+# Additional names supposed to be defined in builtins (a list). Remember that you should avoid
+# defining new builtins when possible.
+additional-builtins=
+
+# Unused global variables are treated as violations.
+allow-global-unused-variables=yes
+
+# Names allowed to shadow builtins.
+allowed-redefined-builtins=
+
+# List of strings which can identify a callback function by name. A callback name must start or
+# end with one of those strings.
+callbacks=cb_,_cb
+
+# A regular expression matching the name of dummy variables (i.e. expected to not be used).
+dummy-variables-rgx=(?x)(_+$|(_[a-zA-Z0-9_]*[a-zA-Z0-9]+?$)|dummy|^ignored_|^unused_)
+
+# Argument names that match this expression will be ignored. Default to name with leading
+# underscore.
+ignored-argument-names=(?x)(_.*|^ignored_|^unused_)
+
+# Check for unused import in `__init__` files.
+init-import=no
+
+# Modules that may have objects that can redefine builtins (a list of qualified names).
+redefining-builtins-modules=six.moves,
+                            past.builtins,
+                            future.builtins,
+                            builtins,
+                            io,
+                            functools
+
+
+[CLASSES]
+
+# Warn about protected attribute access inside special methods
+check-protected-access-in-special-methods=no
+
+# Methods used to declare (i.e. assign) instance attributes (a list of names).
+defining-attr-methods=__init__,
+                      __new__,
+                      __post_init__,
+                      setUp
+
+# Methods that should be excluded from the protected access warning (a list of names).
+exclude-protected=_asdict,
+                  _fields,
+                  _replace,
+                  _source,
+                  _make
+
+# List of valid names for the first argument in a class method.
+valid-classmethod-first-arg=cls,class_
+
+# List of valid names for the first argument in a metaclass class method.
+valid-metaclass-classmethod-first-arg=cls,mcs
+
+
+[DESIGN]
+
+# Maximum number of arguments for function/method.
+max-args=5
+
+# Maximum number of attributes for a class (see the R0902).
+max-attributes=7
+
+# Maximum number of boolean expressions in an if statement (see the R0916).
+max-bool-expr=5
+
+# Maximum number of branch for function/method body.
+max-branches=12
+
+# Maximum number of locals for function/method body.
+max-locals=15
+
+# Maximum number of parents for a class (see the R0901).
+max-parents=7
+
+# Maximum number of public methods for a class (see the R0904).
+max-public-methods=20
+
+# Maximum number of `return`/`yield` for function/method body.
+max-returns=6
+
+# Maximum number of statements in function/method body.
+max-statements=50
+
+# Minimum number of public methods for a class (see the R0903).
+min-public-methods=1
+
+
+[IMPORTS]
+
+# Modules that can be imported at any level, not just the top level (a list).
+allow-any-import-level=
+
+# Allow wildcard imports from modules that define `__all__`.
+allow-wildcard-with-all=no
+
+# Analyse import fallback blocks. This can be used to support both Python 2 and 3 compatible
+# code, which means that the block might have code that exists only in one or another
+# interpreter, leading to false positives when analysed.
+analyse-fallback-blocks=no
+
+# Deprecated modules which should not be used (a comma-separated list).
+deprecated-modules=optparse,
+                   tkinter.tix,
+                   regsub,
+                   TERMIOS,
+                   Bastion,
+                   rexec,
+                   sets
+
+# Output a graph (`.gv` or any supported image format) of external dependencies to the given file
+# (report RP0402 must not be disabled).
+ext-import-graph=
+
+# Output a graph (`.gv` or any supported image format) of all (i.e. internal and external)
+# dependencies to the given file (report RP0402 must not be disabled).
+import-graph=
+
+# Output a graph (`.gv` or any supported image format) of internal dependencies to the given file
+# (report RP0402 must not be disabled).
+int-import-graph=
+
+# Force import order to recognize a module as part of the standard compatibility libraries.
+known-standard-library=
+
+# Force import order to recognize a module as part of a third party library.
+known-third-party=enchant,
+                  absl
+
+# Couples of modules and preferred modules, separated by a comma.
+preferred-modules=
+
+
+[EXCEPTIONS]
+
+# Exceptions that will emit a warning when being caught. Defaults to
+# `BaseException,Exception`.
+overgeneral-exceptions=StandardError,
+                       BaseException,
+                       Exception
